@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+  <h1 class="mb-4">About the Todo App</h1>
+  
+  <p>
+    Welcome to the Todo App — your companion for managing daily tasks and boosting productivity! This app is designed with simplicity and efficiency in mind, making it easy for anyone to stay organized.
+  </p>
+  
+  <h3 class="mt-4">Key Features</h3>
+  <ul class="mb-4">
+    <li><strong>Create and Manage Tasks:</strong> Add tasks with priorities, due dates, and descriptions to keep track of what needs to be done.</li>
+    <li><strong>Organize by Priority:</strong> Easily set task priorities (High, Medium, Low) and view them in order to focus on what matters most.</li>
+    <li><strong>Due Date Reminders:</strong> Never miss a deadline. Set due dates for each task and quickly access today’s to-do list for timely completion.</li>
+    <li><strong>Complete and Archive:</strong> Mark tasks as complete, allowing you to keep track of accomplishments and easily revisit completed tasks.</li>
+    <li><strong>Search Functionality:</strong> Quickly find specific tasks or keywords using the search bar.</li>
+  </ul>
+
+  <h3>Technology Stack</h3>
+  <p>
+    The Todo App is powered by <strong>Flask</strong> and <strong>SQLite</strong>. Flask provides a lightweight yet robust framework for building web applications, while SQLite ensures a quick and efficient storage system for tasks. With responsive design, the app is fully accessible on both desktop and mobile devices.
+  </p>
+  
+  <h3>Future Enhancements</h3>
+  <p>
+    We’re constantly working to improve the Todo App to make your experience even better. Upcoming features may include email reminders, enhanced task filtering, and integration with popular calendar tools.
+  </p>
+
+  <p class="mt-5">
+    Thank you for using the Todo App. Stay productive, and enjoy a seamless task management experience!
+  </p>
+</div>
+{% endblock %}

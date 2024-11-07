@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %} Today's Tasks {% endblock title %}
+{% block body %}
+
+<div class="container mb-3">
+  <h2>Today's Tasks</h2>
+
+  {% if today_todos %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Number</th>
+          <th scope="col">Title</th>
+          <th scope="col">Description</th>
+          <th scope="col">Created Time</th>
+          <th scope="col">Due Date</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for todo in today_todos %}
+        <tr>
+          <th scope="row">{{ loop.index }}</th>
+          <td>{{ todo.title }}</td>
+          <td>{{ todo.desc }}</td>
+          <td>{{ todo.date_created.strftime('%Y-%m-%d %H:%M') }}</td>
+          <td>{{ todo.due_date.strftime('%Y-%m-%d') if todo.due_date else 'No due date' }}</td>
+          <td>
+            <form action="/delete/{{ todo.id }}" method="POST" style="display:inline;">
+              <button type="submit" class="btn btn-outline-dark btn-sm mx-1">Delete</button>
+            </form>
+            <a href="/update/{{ todo.id }}" class="btn btn-outline-dark btn-sm mx-1">Update</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <div class="alert alert-dark" role="alert">
+      No tasks due today.
+    </div>
+  {% endif %}
+</div>
+
+{% endblock body %}

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %} Search Results {% endblock title %}
+{% block body %}
+
+<div class="container mb-3">
+  <h2>Search Results</h2>
+
+  {% if todos %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Number</th>
+          <th scope="col">Title</th>
+          <th scope="col">Description</th>
+          <th scope="col">Created Time</th>
+          <th scope="col">Due Date</th>
+          <th scope="col">Status</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for todo in todos %}
+        <tr>
+          <th scope="row">{{ loop.index }}</th>
+          <td>{{ todo.title }}</td>
+          <td>{{ todo.desc }}</td>
+          <td>{{ todo.date_created.strftime('%Y-%m-%d %H:%M') }}</td>
+          <td>{{ todo.due_date.strftime('%Y-%m-%d') if todo.due_date else 'No due date' }}</td>
+          <td>
+            {% if todo.completed %}
+              <span class="badge badge-success">Completed</span>
+            {% else %}
+              <span class="badge badge-secondary">Uncompleted</span>
+            {% endif %}
+          </td>
+          <td>
+            <form action="/delete/{{ todo.id }}" method="POST" style="display:inline;">
+              <button type="submit" class="btn btn-outline-dark btn-sm mx-1">Delete</button>
+            </form>
+            <a href="/update/{{ todo.id }}" class="btn btn-outline-dark btn-sm mx-1">Update</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <div class="alert alert-dark" role="alert">
+      No tasks found for your search.
+    </div>
+  {% endif %}
+</div>
+
+{% endblock body %}

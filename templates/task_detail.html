@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+
+{% block title %} Task Details {% endblock %}
+
+{% block body %}
+<div class="container mt-5 p-4 bg-white shadow rounded">
+  <h2 class="text-primary text-center">{{ todo.title }}</h2>
+
+  <div class="mt-4">
+    <p><strong>Description:</strong> {{ todo.desc }}</p>
+    <p><strong>Priority:</strong> 
+      <span class="{% if todo.priority == 'High' %}text-danger{% elif todo.priority == 'Medium' %}text-warning{% else %}text-success{% endif %}">
+        {{ todo.priority }}
+      </span>
+    </p>
+    <p><strong>Created Time:</strong> {{ todo.date_created.strftime('%Y-%m-%d %H:%M') }}</p>
+    <p><strong>Due Date:</strong> {{ todo.due_date.strftime('%Y-%m-%d') if todo.due_date else 'No due date' }}</p>
+    <p><strong>Completed:</strong> {{ 'Yes' if todo.completed else 'No' }}</p>
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="{{ url_for('Home') }}" class="btn btn-outline-primary rounded-pill">Back to Home</a>
+  </div>
+</div>
+{% endblock %}

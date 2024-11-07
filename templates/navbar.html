@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container">
+    <a class="navbar-brand mx-auto" href="/">Task Manager</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarContent"
+      aria-controls="navbarContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('today_tasks') }}">Today's Tasks</a>
+        </li>
+      </ul>
+    </div>
+
+    <form class="form-inline d-flex ml-auto" method="GET" action="/search">
+      <input class="form-control mr-2 rounded-pill" type="search" name="search" placeholder="Search tasks..." aria-label="Search" />
+      <select name="priority" class="form-control mr-2 rounded-pill">
+        <option value="">All Priorities</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+      <select name="status" class="form-control mr-2 rounded-pill">
+        <option value="">All Statuses</option>
+        <option value="completed">Completed</option>
+        <option value="uncompleted">Uncompleted</option>
+      </select>
+      <button class="btn btn-outline-primary rounded-pill" type="submit">Search</button>
+    </form>
+    
+  </div>
+</nav>

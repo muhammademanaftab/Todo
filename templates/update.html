@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} Update Task {% endblock title %}
+{% block body %}
+
+<div class="container mt-4">
+  <h2>Update Task</h2>
+  <form action="{{ url_for('update', id=todo.id) }}" method="POST">
+    <div class="mb-3">
+      <label for="title">Todo Title</label>
+      <input type="text" class="form-control" name="title" id="title" value="{{ todo.title }}" required>
+    </div>
+    <div class="mb-3">
+      <label for="desc">Todo Description</label>
+      <input type="text" class="form-control" name="desc" id="desc" value="{{ todo.desc }}" required>
+    </div>
+    <div class="mb-3">
+      <label for="due_date">Due Date</label>
+      <input type="date" class="form-control" name="due_date" id="due_date"
+             value="{{ todo.due_date.strftime('%Y-%m-%d') if todo.due_date else '' }}">
+    </div>
+    <button type="submit" class="btn btn-dark">Update</button>
+  </form>
+</div>
+
+{% endblock body %}

@@ -33,16 +33,7 @@ Welcome to the **Flask To-Do App**! This application is designed to make task ma
 ---
 
 ## 📂 Folder Structure
- ├── app.py # Main Flask application 
- ├── templates/ # HTML templates for frontend │ 
- ├── index.html # Home page for task management │ 
- ├── add_task.html # Page to add new tasks 
- ├── static/ # Static files like CSS │ 
- ├── styles.css # Application styles 
- ├── database.db # SQLite database 
- ├── requirements.txt # Python dependencies 
- └── README.md # Documentation
-
+ ├── app.py # Main Flask application ├── templates/ # HTML templates for frontend │ ├── index.html # Home page for task management │ ├── add_task.html # Page to add new tasks ├── static/ # Static files like CSS │ ├── styles.css # Application styles ├── database.db # SQLite database ├── requirements.txt # Python dependencies └── README.md # Documentation
  
 ---
 
@@ -51,6 +42,13 @@ Welcome to the **Flask To-Do App**! This application is designed to make task ma
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/muhammademanaftab/TodoApp
+
+2.Install Dependencies: Make sure you have Python installed, then run:
+ pip install -r requirements.txt
+
+3. Run the Application: Start the Flask server:
+ python app.py
+
 
 ⚙️ Customization
 Want to extend the functionality? Here are some ideas:
@@ -72,12 +70,11 @@ Open a pull request.
 
 
 ---
+📧 Contact
+Author: Muhammad Eman Aftab
+GitHub: github.com/muhammademanaftab
+Give this project a ⭐️ if you find it helpful! 😊
 
-### Steps to Complete
-1. **Replace placeholders**: Update `your-username`, `path/to/screenshots`, `your-email@example.com`, and `your-demo-link.com` with the actual details.
-2. **Commit Changes**: After pasting the content, click **Commit changes**.
-3. **Verify**: Go to your repository's main page, and you’ll see this `README.md` displayed beautifully! 🎉
 
-Let me know if you face any issues! 😊
 
 

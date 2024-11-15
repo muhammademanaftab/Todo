@@ -34,21 +34,27 @@ Welcome to the **Flask To-Do App**! This application is designed to make task ma
 
 ## 📂 Folder Structure
  ├── app.py # Main Flask application 
+
  ├── templates/ # HTML templates for frontend 
+
  │ ├── index.html # Home page for task management 
+
  │ ├── add_task.html # Page to add new tasks 
+
  ├── static/ # Static files like CSS 
+
  │ ├── styles.css # Application styles ├── database.db # SQLite database ├── requirements.txt # Python dependencies └── README.md # Documentation
  
 ---
 
 ## 🎯 How to Run the Application
+
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/muhammademanaftab/TodoApp
 2.Install Dependencies: Make sure you have Python installed, then run:
  pip install -r requirements.txt
- 3. Run the Application: Start the Flask server:
+3. Run the Application: Start the Flask server:
  python app.py
 
 

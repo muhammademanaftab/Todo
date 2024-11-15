@@ -5,6 +5,7 @@
 <div class="container mb-5 p-4 bg-white shadow rounded">
   <h2 class="text-primary mb-4">Add a New Task</h2>
 
+  <!-- For flash msgs, this area dedicated to them -->
   {% with messages = get_flashed_messages() %}
     {% if messages %}
       <div class="alert alert-warning text-center" role="alert">
@@ -15,6 +16,7 @@
     {% endif %}
   {% endwith %}
 
+  <!-- Form page, that will use to post data into database -->
   <form action="/" method="POST">
     <div class="form-group">
       <label for="title" class="font-weight-bold text-secondary">Task Title</label>
@@ -59,7 +61,8 @@
         <th scope="row">{{ loop.index }}</th>
         <td>{{ todo.title }}</td>
         <td>
-          {% if todo.desc|length > 50 %}
+          <!-- If desc length greater then 50 then am using ..... -->
+          {% if todo.desc|length > 20 %}
             {{ todo.desc[:10] }}...
             <a href="{{ url_for('task_detail', id=todo.id) }}">View Details</a>
           {% else %}

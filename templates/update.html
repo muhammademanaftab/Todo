@@ -2,7 +2,7 @@
 {% block title %} Update Task {% endblock title %}
 {% block body %}
 
-<div class="container mt-4">
+<div class="container mt-1">
   <h2>Update Task</h2>
   <form action="{{ url_for('update', id=todo.id) }}" method="POST">
     <div class="mb-3">
@@ -17,6 +17,14 @@
       <label for="due_date">Due Date</label>
       <input type="date" class="form-control" name="due_date" id="due_date"
              value="{{ todo.due_date.strftime('%Y-%m-%d') if todo.due_date else '' }}">
+    </div>
+    <div class="mb-3">
+      <label for="priority">Priority</label>
+      <select class="form-control" name="priority" id="priority" required>
+        <option value="High" {% if todo.priority == 'High' %} selected {% endif %}>High</option>
+        <option value="Medium" {% if todo.priority == 'Medium' %} selected {% endif %}>Medium</option>
+        <option value="Low" {% if todo.priority == 'Low' %} selected {% endif %}>Low</option>
+      </select>
     </div>
     <button type="submit" class="btn btn-dark">Update</button>
   </form>

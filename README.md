@@ -43,13 +43,12 @@ Welcome to the **Flask To-Do App**! This application is designed to make task ma
 ---
 
 ## 🎯 How to Run the Application
-
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/muhammademanaftab/TodoApp
 2.Install Dependencies: Make sure you have Python installed, then run:
  pip install -r requirements.txt
-3. Run the Application: Start the Flask server:
+ 3. Run the Application: Start the Flask server:
  python app.py
 
 
@@ -74,8 +73,11 @@ Open a pull request.
 
 ---
 📧 Contact
-Author: Muhammad Eman Aftab
+
+Author: Muhammad Eman Aftab 
+
 GitHub: github.com/muhammademanaftab
+
 Give this project a ⭐️ if you find it helpful! 😊
 
 
